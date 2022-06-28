@@ -34,7 +34,7 @@ export const TextButton = styled.Text`
 `;
 
 export const WrapperTextInfo = styled.TouchableWithoutFeedback`
-  padding: 10px;
+  padding: 40px;
 `;
 
 export const TextInfo = styled.Text`

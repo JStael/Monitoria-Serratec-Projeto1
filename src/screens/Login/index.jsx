@@ -12,7 +12,7 @@ import logo from "../../../assets/logo.png";
 import Input from "../../components/Input";
 import spacings from "../../theme/spacings";
 
-const Login = () => {
+const Login = ({ navigation }) => {
   return (
     <Container>
       <Logo source={logo} />
@@ -23,10 +23,10 @@ const Login = () => {
       <WrapperTextInfo>
         <TextInfo>Esqueceu a senha? Cilque aqui!</TextInfo>
       </WrapperTextInfo>
-      <ButtonPrimary>
+      <ButtonPrimary onPress={() => navigation.navigate("Home")}>
         <TextButton>Cilque aqui!</TextButton>
       </ButtonPrimary>
-      <WrapperTextInfo>
+      <WrapperTextInfo onPress={() => navigation.navigate("SignUp")}>
         <TextInfo>Não possui cadastro? Cadastre-se!</TextInfo>
       </WrapperTextInfo>
     </Container>
