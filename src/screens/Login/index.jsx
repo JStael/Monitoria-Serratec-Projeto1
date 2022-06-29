@@ -1,5 +1,5 @@
+import { useState } from "react";
 import {
-  Container,
   Logo,
   Title,
   ButtonPrimary,
@@ -8,18 +8,32 @@ import {
   SpacingHeight,
   WrapperTextInfo,
 } from "./styles";
-import logo from "../../../assets/logo.png";
+import Container from "../../components/Container";
 import Input from "../../components/Input";
+import logo from "../../../assets/logo.png";
 import spacings from "../../theme/spacings";
 
 const Login = ({ navigation }) => {
+  const [user, setUser] = useState({
+    username: "",
+    password: "",
+  });
+
   return (
-    <Container>
+    <Container vertical={"flex-start"}>
       <Logo source={logo} />
       <Title>Login</Title>
-      <Input placeholder={"Digite seu login"} />
+      <Input
+        placeholder={"Digite seu login"}
+        value={user.username}
+        setText={(text) => setUser({ ...user, username: text })}
+      />
       <SpacingHeight height={spacings.extraLarge} />
-      <Input placeholder={"Digite sua senha"} />
+      <Input
+        placeholder={"Digite sua senha"}
+        value={user.password}
+        setText={(text) => setUser({ ...user, password: text })}
+      />
       <WrapperTextInfo>
         <TextInfo>Esqueceu a senha? Cilque aqui!</TextInfo>
       </WrapperTextInfo>
